@@ -1,7 +1,11 @@
 from django.contrib import admin 
-from authApp.models.account import Account
+from authApp.models.product import Product
+from authApp.models.check import Check
 from authApp.models.user import User
+from authApp.models.facturaProdRelacion import FacturaProdRelacion
 
 # Register your models here.
 admin.site.register(User)
-admin.site.register(Account)
+admin.site.register(Product)
+admin.site.register(Check)
+admin.site.register(FacturaProdRelacion)
