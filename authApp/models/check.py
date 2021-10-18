@@ -9,4 +9,4 @@ class Check(models.Model):
     user_fac = models.ForeignKey(User, related_name='factura', on_delete=models.CASCADE)
     date_fac = models.DateField('Date')
     id_prod_fac = models.ForeignKey(Product ,related_name = 'product',on_delete=models.CASCADE)
-    price_fac = models.BigIntegerField('Price')
+    price_fac = models.BigIntegerField('Price') 
