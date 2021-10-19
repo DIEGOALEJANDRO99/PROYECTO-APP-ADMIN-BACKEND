@@ -1,1 +1,1 @@
-web: guinicorn authProject.wsgi
+web: gunicorn authProject.wsgi
