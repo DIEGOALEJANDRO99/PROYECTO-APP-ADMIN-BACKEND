@@ -20,7 +20,7 @@ class UserDetailView(generics.RetrieveAPIView):
             invalid_response ={
                 'detail': 'Unauthorized'
             }
-            print("SIIII ENTRAAA")
+        
             return Response(invalid_response,status=status.HTTP_401_UNAUTHORIZED)
 
 
