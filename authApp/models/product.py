@@ -11,14 +11,6 @@ class Product(models.Model):
     price_prod = models.BigIntegerField('Price')
     size_prod = models.CharField('Size',max_length=1)
 
-    def create_product(self,name_prod,desc_prod,amount_prod,price_prod,size_prod):
-    
-        if not name_prod:
-            raise ValueError("Producto sin nombre")
-        product = self.model(name_prod=name_prod)
-        product.set_firstname(name_prod)
-        product.save(using = self._db)
-
-        return product
+  
 
     

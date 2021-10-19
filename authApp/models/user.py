@@ -12,14 +12,8 @@ class UserManager(BaseUserManager):
         user.save(using = self._db)
         return user
 
-    def create_superuser(self, username, password,su):
-        user = self.create_user(username=username,password=password)
-        user.is_superuser = True
-        user.save(using =self._db)
-        return user
-
 class User(AbstractBaseUser, PermissionsMixin):
-    is_superuser = models.BooleanField(default = False)
+
     id = models.BigAutoField(primary_key=True)
     username = models.CharField('Username', max_length = 15, unique=True)
     password = models.CharField('Password', max_length = 256)

@@ -13,14 +13,13 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def create(self,validated_data):
       
-
         product = Product.objects.create(**validated_data)
 
         return product
     
 
-    def to_representation(self, obj):
-        product_instance = Product.objects.get(id = obj.id_prod)
+    def to_representation(self, id_prod):
+        product_instance = Product.objects.get(id_prod = id_prod)
 
         return {
             'id_prod': product_instance.id_prod,
