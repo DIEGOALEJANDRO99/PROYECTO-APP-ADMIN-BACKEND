@@ -4,7 +4,7 @@ from .user import User
 
 
 class Check(models.Model):
-    #cedulacliente
+    
     id_fac= models.AutoField('Id',primary_key=True)
     dni_cli = models.BigIntegerField('dni_cli', default=0)
     user_fac = models.ForeignKey(User, related_name='factura', on_delete=models.CASCADE)

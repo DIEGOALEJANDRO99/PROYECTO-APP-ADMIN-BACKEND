@@ -7,6 +7,7 @@ from rest_framework import status, views, generics
 from rest_framework.response import Response
 from rest_framework_simplejwt.backends import TokenBackend
 from authApp.models.product import Product
+
 from authApp.serializers.productSerializer import ProductSerializer
 from authApp.serializers.productSerializer import ProductSerializer
 from django.http import Http404
@@ -14,28 +15,16 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-class ProductDetailView(APIView):
+
+class ProductDetailView(views.APIView):
 
 
-    def get(self,request, *args, **kwargs):
-
-
-        queryset =Product.objects.all()
-        serializer_class = ProductSerializer(queryset)
+    def get(self,request,pk, format = None):
         
-        return response(serializer_class.data)
-
-
-    def get_1(self,request,pk,*args, **kwargs):
-
-        queryset =Product.objects.get_object(pk)
+        queryset = Product.objects.get(pk)
         serializer_class = ProductSerializer(queryset)
 
-        return 
-
-
-
-        
+        return response(serializer_class,status=status.HTTP_302_FOUND)
 
 
    

@@ -18,15 +18,21 @@ from django.urls import path
 from authApp import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from authApp.views.productCreateView import ProductCreateView
+from authApp.views.checkDetailView import CheckDetailView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/',views.UserCreateView.as_view()),
-    path('user/<int:pk>',views.UserDetailView.as_view()),
-    path('refresh/',TokenRefreshView.as_view()),
-    path('login/',TokenObtainPairView.as_view()),
-    path('product/',views.ProductCreateView.as_view()),
-    path('product/<int:pk>',views.ProductDetailView.as_view())
+    path('userCreate/',views.UserCreateView.as_view()),
+    path('userDetail/<int:pk>',views.UserDetailView.as_view()),
+    path('refreshToken/',TokenRefreshView.as_view()),
+    path('loginUser/',TokenObtainPairView.as_view()),
+    path('productCreate/',views.ProductCreateView.as_view()),
+    path('productDetail/<int:pk>',views.ProductDetailView.as_view()),
+    path('productUpdate/<int:pk>',views.ProductUpdateView.as_view()),
+    path('productDelete/<int:pk>',views.ProductDeleteView.as_view()),
+    path('checkCreate/',views.CheckCreateView.as_view()),
+    path('checkDetail/<int:pk>',views.CheckDetailView.as_view())
+
 ]
 
