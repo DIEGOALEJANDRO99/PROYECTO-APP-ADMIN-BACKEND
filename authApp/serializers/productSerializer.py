@@ -18,8 +18,8 @@ class ProductSerializer(serializers.ModelSerializer):
         return product
     
 
-    def to_representation(self, id_prod):
-        product_instance = Product.objects.get(id_prod = id_prod)
+    def to_representation(self, obj):
+        product_instance = Product.objects.get(id_prod = obj.id_prod)
 
         return {
             'id_prod': product_instance.id_prod,

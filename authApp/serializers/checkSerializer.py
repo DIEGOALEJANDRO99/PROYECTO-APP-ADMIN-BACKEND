@@ -28,11 +28,13 @@ class CheckSerializer(serializers.ModelSerializer):
         product_instance = Product.objects.get(id_prod = id_fac.id_prod)
         user_instance = User.objects.get(id=id_fac.id)
 
+
+
         return {
             'id_fac': check_instance.id_fac,
             'dni_cli': check_instance.dni_cli,
-            'user_fac': user_instance.user_fac,
+            'user_fac': check_instance.user_fac,
             'date_fac': check_instance.date_fac,
-            'id_prod_fac': product_instance.id_prod,
+            'id_prod_fac': check_instance.id_prod_fac,
             'price_fac' : check_instance.price_fac
             }
