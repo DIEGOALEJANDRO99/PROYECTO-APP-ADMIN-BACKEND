@@ -9,5 +9,5 @@ class Check(models.Model):
     dni_cli = models.BigIntegerField('dni_cli', default=0)
     user_fac = models.ForeignKey(User, related_name='factura', on_delete=models.CASCADE,default=None)
     date_fac = models.DateTimeField('Date',default=None)
-    id_prod_fac = models.ForeignKey(Product ,related_name = 'product',on_delete=models.CASCADE, default=None)
+    id_prod_fac= models.ForeignKey(Product ,related_name = 'product',on_delete=models.CASCADE, default=None)
     price_fac = models.BigIntegerField('Price',default=None) 
