@@ -14,7 +14,6 @@ class ProductDeleteView(views.APIView):
                      raise Http404
 
 
-
        def delete(self,request,pk,*args,**kwargs):
 
               product = self.get_object(pk)
