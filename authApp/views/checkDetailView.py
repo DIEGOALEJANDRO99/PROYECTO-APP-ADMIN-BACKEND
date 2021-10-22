@@ -10,8 +10,7 @@ class CheckDetailView(generics.RetrieveAPIView):
     serializer_class = CheckSerializer
     
     def get(self,request, *args,**kwargs):
-        
-
+    
         return super().get(request,*args,**kwargs)
 
 
